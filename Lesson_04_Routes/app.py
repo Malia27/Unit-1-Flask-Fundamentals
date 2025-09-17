@@ -24,19 +24,25 @@ def user_profile(username):
         <a href="/user/bob">Bob</a>
     </nav>
 """
-@app.route("/calc/<int:num1>/<operation>/<int:num2>")
-def calculator(num1, operation, num2):
-    operations = {
-       '+' : num1 + num2,
-       '-' : num1 - num2,
-       '*' : num1 * num2,
-       '/' : num1 / num2 if num2 != 0 else 'Error: Division by zero!'
-    }
-    if operation in operations:
-       result = operations[operation]
-       return f"{num1} {operation} {num2} = {result}"
-    else:
-       return f"Unknown operation! {operation}"
+# @app.route("/calc/<int:num1>/<operation>/<int:num2>")
+# def calculator(num1, operation, num2):
+#     operations = {
+#        '+' : num1 + num2,
+#        '-' : num1 - num2,
+#        '*' : num1 * num2,
+#        '/' : num1 / num2 if num2 != 0 else 'Error: Division by zero!'
+#     }
+#     if operation in operations:
+#        result = operations[operation]
+#        return f"{num1} {operation} {num2} = {result}"
+#     else:
+#        return f"Unknown operation! {operation}"
     
+@app.route("/temp/<int:tempF>")
+def calculator(tempF):
+    result = (tempF - 32)*5/9
+    return f"{tempF} F = {result} C"
+    
+
 if __name__ == '__main__':
  app.run(debug=True)
