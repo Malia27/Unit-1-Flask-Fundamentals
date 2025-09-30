@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Customer Feedback</h1>
-        <form action="" method="POST">
+        <form action="" method='POST'> <!--'GET' sends as a query parameter-->
             <input type="text" name="name" id="" placeholder="Your Name" required>
             <select name="rating" id="" required>
                 <option value="">Rate us</option>
@@ -21,6 +21,7 @@
             </select>
             <button type="submit">Submit</button>
         </form>
+        <h2>{{name}} {{rating}}</h2>
         <div id="result">
             <!-- Results -->
         </div>
